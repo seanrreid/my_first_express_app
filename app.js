@@ -6,7 +6,7 @@ app.listen(3333, () => {
 });
 
 const rootController = (req, res) => {
-  const snippet = `<h1>Happy Birthday Alan and (belated) Josh!</h1>`;
+  const snippet = `<h1>Hello World</h1>`;
   res
     .status(200)
     .send(snippet)
@@ -21,5 +21,21 @@ const fooController = (req, res) => {
     .end();
 };
 
+const catController = (req, res) => {
+  res
+    .status(200)
+    .send(`<h1>Meow</h1>`)
+    .end();
+};
+
+const dogController = (req, res) => {
+  res
+    .status(200)
+    .send(`<h1>Woof</h1>`)
+    .end();
+};
+
 app.get('/', rootController);
 app.get('/foo', fooController);
+app.get('/cat', catController);
+app.get('/dog', dogController);
