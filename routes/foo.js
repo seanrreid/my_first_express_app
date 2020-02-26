@@ -1,12 +1,21 @@
 const express = require('express'),
   router = express.Router();
 
+const data = [
+  { name: 'Jason', zord: 'T-Rex' },
+  { name: 'Billy', zord: 'Triceratops' }
+];
+
 router.get('/', (req, res) => {
-  const snippet = `<h1>Foo Page</h1>`;
-  res
-    .status(200)
-    .send(snippet)
-    .end();
+  res.render('template', {
+    locals: {
+      title: 'Foo Page!!!',
+      arrayOfData: data
+    },
+    partials: {
+      partial: 'partial-foo'
+    }
+  });
 });
 
 module.exports = router;

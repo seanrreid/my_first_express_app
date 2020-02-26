@@ -2,10 +2,14 @@ const express = require('express'),
   router = express.Router();
 
 router.get('/', (req, res) => {
-  res
-    .status(200)
-    .send(`<h1>Meow</h1>`)
-    .end();
+  res.render('template', {
+    locals: {
+      title: 'CAT PAGE!!!'
+    },
+    partials: {
+      partial: 'partial-cat'
+    }
+  });
 });
 
 module.exports = router;
