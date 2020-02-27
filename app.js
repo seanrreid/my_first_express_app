@@ -10,14 +10,18 @@ app.listen(3333, () => {
   console.log('Server running on port 3333');
 });
 
+app.use(express.static('public'));
+
 const rootController = require('./routes/index'),
   catController = require('./routes/cat'),
   dogController = require('./routes/dog'),
   fooController = require('./routes/foo'),
-  personController = require('./routes/person');
+  personController = require('./routes/person'),
+  ceosController = require('./routes/ceos');
 
 app.use('/', rootController);
 app.use('/foo', fooController);
 app.use('/cat', catController);
 app.use('/dog', dogController);
 app.use('/person', personController);
+app.use('/ceos', ceosController);

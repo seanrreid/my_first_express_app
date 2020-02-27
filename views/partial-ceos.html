@@ -1,0 +1,5 @@
+<ul>
+    ${arrayOfData.map(ceo =>
+        `<li><a href='./ceos/${ceo.id}'>${ceo.name}: ${ceo.year}</a></li>`
+    ).join('')}
+</ul>
